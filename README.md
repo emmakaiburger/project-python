@@ -1,3 +1,3 @@
 project-python
 ==============
-See README.md file 
+See WhatMyProgramDoes.txt file 
