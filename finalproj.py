@@ -28,15 +28,15 @@ nyt_json_str = result.read()
 #Step 4 
 nyt_data = json.loads(nyt_json_str)
 
-#Step 5-append the url of each book to a list 
-hardcover_fiction = []
+#Step 5-append the url of each hardcover fiction book to a list 
+hardcover_fiction_id = []
 for a in nyt_data["results"][:10]:
-    hardcover_fiction.append(a["amazon_product_url"])
-print pretty(hardcover_fiction)
+    hardcover_fiction_id.append(a["amazon_product_url"])
+print pretty(hardcover_fiction_id)
 
 
 hardcoverfiction_booknames = []
-for a in hardcover_fiction:
+for a in hardcover_fiction_id:
     b = a.split('/')
     hardcoverfiction_booknames.append(b[3])
 
@@ -53,7 +53,7 @@ novellist1 = fix_data(hardcoverfiction_booknames)
 print "Here's the best seller list of the top 10 hardcover fiction books"
 print pretty(novellist1)
     
-#Step 6-10 repeat same process but with next list
+#Step 6-10 repeat same process but with next list of hardcover nonfiction books
 d = {}
 d['api-key'] = '678eeafb3f2b698e01865592a3de62ab:7:70254372'
 d['list-name'] = 'hardcover-nonfiction'
@@ -69,12 +69,12 @@ nyt_json_str = result.read()
 
 nyt_data = json.loads(nyt_json_str) 
 
-hardcover_nonfiction = []
+hardcover_nonfiction_id = []
 for a in nyt_data["results"][:10]:
-    hardcover_nonfiction.append(a["amazon_product_url"])
+    hardcover_nonfiction_id.append(a["amazon_product_url"])
 
 hardcovernonfiction_booknames = []
-for a in hardcover_nonfiction:
+for a in hardcover_nonfiction_id:
     b = a.split('/')
     hardcovernonfiction_booknames.append(b[3])
 
@@ -97,7 +97,7 @@ try:
 except:
     print "Check that you are performing the list comprehensions correctly in order to collect the names of only ten novels in an iterable list"
     
-#Steps 11-15 repeat same process but with third list 
+#Steps 11-15 repeat same process but with third list of fictional ebooks
 d = {}
 d['api-key'] = '678eeafb3f2b698e01865592a3de62ab:7:70254372'
 d['list-name'] = 'e-book-fiction'
@@ -113,13 +113,13 @@ nyt_json_str = result.read()
 
 nyt_data = json.loads(nyt_json_str) 
 
-ebook_fiction = []
+ebook_fiction_id = []
 for a in nyt_data["results"][:10]:
-    ebook_fiction.append(a["amazon_product_url"])
-print pretty(ebook_fiction)
+    ebook_fiction_id.append(a["amazon_product_url"])
+print pretty(ebook_fiction_id)
 
 ebookfiction_booknames = []
-for a in ebook_fiction:
+for a in ebook_fiction_id:
     b = a.split('/')
     ebookfiction_booknames.append(b[3])
 
@@ -137,7 +137,7 @@ novellist3 = fix_data(ebookfiction_booknames)
 print "Here's the best seller list of the top 10 ebook fiction books"
 print pretty(novellist3)
 
-#Steps 16-20 repeat same process but with fourth list
+#Steps 16-20 repeat same process but with fourth list of nonfiction ebooks 
 d = {}
 d['api-key'] = '678eeafb3f2b698e01865592a3de62ab:7:70254372'
 d['list-name'] = 'e-book-nonfiction'
@@ -153,12 +153,12 @@ nyt_json_str = result.read()
 
 nyt_data = json.loads(nyt_json_str) 
 
-ebook_nonfiction = []
+ebook_nonfiction_id = []
 for a in nyt_data["results"][:10]:
-    ebook_nonfiction.append(a["amazon_product_url"])
+    ebook_nonfiction_id.append(a["amazon_product_url"])
 
 ebooknonfiction_booknames = []
-for a in ebook_nonfiction:
+for a in ebook_nonfiction_id:
     b = a.split('/')
     ebooknonfiction_booknames.append(b[3])
 
