@@ -322,17 +322,8 @@ for a in total_tweets:
     outfile.write('"%s","%d", %d, %d\n' % tweets)
 outfile.close()
 
-outfile = open("hardcovernonfiction.txt", 'w')
-total_tweets = dictionary2
-outfile.write('"novel name", "emo score", favourites counts, retweets counts\n')
-for a in total_tweets:
-    b = Tweet(a[0], a[1]) 
-    tweets = (b.novelname, b.emo_score(), b.favouritescount, b.retweet_count)
-    outfile.write('"%s","%d", %d, %d\n' % tweets)
-outfile.close()
-
-print "Lastly, to see the books in order of popularity in terms of favorites/retweets overall..."
-outfile = open("hardcovernonfiction.txt", 'r')
+print "Lastly, to see the books in order of popularity in terms of their average favorites/retweets overall..."
+outfile = open("bestsellinglists1.csv", 'r')
 a = outfile.readlines()
 c = sorted(a, key = lambda x: x.count('0'), reverse = True)
 print pretty(c[1:]) 
@@ -411,21 +402,11 @@ for a in total_tweets:
 outfile.close()
 
 
-outfile = open("hardcovernonfiction.txt", 'w')
-total_tweets = dictionary2
-outfile.write('"novel name", "emo score", favourites counts, retweets counts\n')
-for a in total_tweets:
-    b = Tweet(a[0], a[1]) 
-    tweets = (b.novelname, b.emo_score(), b.favouritescount, b.retweet_count)
-    outfile.write('"%s","%d", %d, %d\n' % tweets)
-outfile.close()
-
-print "Lastly, to see the books in order of popularity in terms of favorites/retweetsoverall..."
-outfile = open("hardcovernonfiction.txt", 'r')
+print "Lastly, to see the books in order of popularity in terms of their average favorites/retweets overall..."
+outfile = open("bestsellinglists2.csv", 'r')
 a = outfile.readlines()
 c = sorted(a, key = lambda x: x.count('0'), reverse = True)
 print pretty(c[1:]) 
-
 print "Now searching each book on the ebook fiction best seller list on twitter..."
 def get_tweetlist(x):
     tweetlist = []
@@ -499,17 +480,8 @@ for a in total_tweets:
     outfile.write('"%s","%d", %d, %d\n' % tweets)
 outfile.close()
 
-outfile = open("ebooknonfiction.txt", 'w')
-total_tweets = dictionary2
-outfile.write('"novel name", "emo score", favourites counts, retweets counts\n')
-for a in total_tweets:
-    b = Tweet(a[0], a[1]) 
-    tweets = (b.novelname, b.emo_score(), b.favouritescount, b.retweet_count)
-    outfile.write('"%s","%d", %d, %d\n' % tweets)
-outfile.close()
-
-print "Lastly, to see the books in order of popularity in terms of favorites/retweets overall..."
-outfile = open("ebooknonfiction.txt", 'r')
+print "Lastly, to see the books in order of popularity in terms of their average favorites/retweets overall..."
+outfile = open("bestsellinglists3.csv", 'r')
 a = outfile.readlines()
 c = sorted(a, key = lambda x: x.count('0'), reverse = True)
 print pretty(c[1:]) 
@@ -587,17 +559,8 @@ for a in total_tweets:
 outfile.close()
 
 
-outfile = open("ebookfiction.txt", 'w')
-total_tweets = dictionary2
-outfile.write('"novel name", "emo score", favourites counts, retweets counts\n')
-for a in total_tweets:
-    b = Tweet(a[0], a[1]) 
-    tweets = (b.novelname, b.emo_score(), b.favouritescount, b.retweet_count)
-    outfile.write('"%s","%d", %d, %d\n' % tweets)
-outfile.close()
-
-print "Lastly, to see the books in order of popularity in terms of favorites/retweets overall..."
-outfile = open("ebookfiction.txt", 'r')
+print "Lastly, to see the books in order of popularity in terms of their average favorites/retweets overall..."
+outfile = open("bestsellinglists4.csv", 'r')
 a = outfile.readlines()
 c = sorted(a, key = lambda x: x.count('0'), reverse = True)
 print pretty(c[1:]) 
